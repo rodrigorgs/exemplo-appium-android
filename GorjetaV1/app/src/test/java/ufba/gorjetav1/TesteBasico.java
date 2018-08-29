@@ -41,9 +41,6 @@ public class TesteBasico {
     }
 
     public MobileElement byId(String id) {
-//	  return wait.until(ExpectedConditions.visibilityOfElementLocated
-//				(By.id("ufba.gorjetav1:id/" + id)));
-
         return driver.findElementById("ufba.gorjetav1:id/" + id);
     }
 
@@ -53,23 +50,11 @@ public class TesteBasico {
         MobileElement button = byId("button");
         MobileElement textView = byId("textView");
 
-//		editText.click();
         editText.sendKeys("1234");
         button.click();
         String text = textView.getText();
 
-//		List<MobileElement> list = driver.findElementsByXPath("//*");
-//		for (MobileElement elem : list) {
-//			System.out.println(elem.getAttribute("resourceId"));
-//		}
-
-        System.out.println("Text: " + text);
         Assert.assertEquals("1234", text);
-
-        //Notification Allow
-//        if (driver.findElements(By.id("com.android.packageinstaller:id/permission_allow_button")).size()>0) {
-//            driver.findElements(By.id("com.android.packageinstaller:id/permission_allow_button")).get(0).click();
-//        }
     }
 
     @After
