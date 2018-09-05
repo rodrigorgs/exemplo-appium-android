@@ -13,21 +13,22 @@ android:
         - build-tools-26.0.2
 
         # The SDK version used to compile your project
-        # - android-26
-        - android-22
+        - android-26
+        # - android-22
         # - android-24
 
         # Additional components
         - extra-google-google_play_services
         - extra-google-m2repository
         - extra-android-m2repository
-        - addon-google_apis-google-22
+        # - addon-google_apis-google-22
+        - addon-google_apis-google-26
 
         # System image for your emulator
         # You need at least one system image
-        - sys-img-armeabi-v7a-android-22
+        # - sys-img-armeabi-v7a-android-22
         # - sys-img-armeabi-v7a-android-24
-        # - sys-img-armeabi-v7a-android-26
+        - sys-img-armeabi-v7a-android-26
 
 before_install:
     # Add $JAVA_HOME/bin to PATH (for Appium executing)
@@ -49,7 +50,7 @@ before_install:
 
 before_script:
     # Create emulator (emulator image version should be exist in previous android setting)
-    - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
+    - echo no | android create avd --force -n test -t android-26 --abi armeabi-v7a
 
     # Run emulator
     - emulator -avd test -no-skin -no-window &
