@@ -50,7 +50,7 @@ before_install:
 
 before_script:
     # Create emulator (emulator image version should be exist in previous android setting)
-    - echo no | android create avd --force -n test -t android-26 --abi armeabi-v7a
+    - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
 
     # Run emulator
     - emulator -avd test -no-skin -no-window &
